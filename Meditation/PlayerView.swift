@@ -8,7 +8,7 @@
 // ------------------------------------------------------------------------
 //
 
-
+import ActivityKit
 import SwiftUI
 
 struct PlayerView: View {
@@ -18,6 +18,9 @@ struct PlayerView: View {
   var isPreview: Bool = false
   @State private var isEditing: Bool = false
   @State private var value: Double = 0.0
+  @State private var lastActivityUpdate = Date.distantPast
+  @State private var tickCount = 0
+  @State private var activity: Activity<MusicPlayerAttributes>? = nil
   
   let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
   
@@ -34,6 +37,7 @@ struct PlayerView: View {
         HStack {
           Button {
             audioManager.stop()
+            stopActivity()
             self.dismiss()
           } label: {
             Image(systemName: "xmark.circle.fill").font(.system(size: 36)).foregroundStyle(.white)
@@ -96,6 +100,7 @@ struct PlayerView: View {
           // MARK: - Stop Button
           PlaybackControlButton(systemName: "stop.fill", action: {
             audioManager.stop()
+            stopActivity()
             self.dismiss()
           })
         }
@@ -105,10 +110,12 @@ struct PlayerView: View {
     .onAppear {
       audioManager.startPlayer(track: meditation.track, isPreview: isPreview)
       // AudioManager.shared.startPlayer(track: meditation.track, isPreview: isPreview)
+      startActivity()
     }
     .onReceive(timer) { _ in
       guard let player = audioManager.player, !isEditing else { return }
       self.value = player.currentTime
+      updateActivity()
     }
   }
 }
@@ -116,4 +123,43 @@ struct PlayerView: View {
 #Preview {
   PlayerView(meditation: MeditationModel.data, isPreview: true)
     .environmentObject(AudioManager())
+}
+
+extension PlayerView {
+  private func startActivity() {
+    let attributes = MusicPlayerAttributes(albumArtName: "image-stones")
+    let contentState = MusicPlayerAttributes.ContentState(
+      title: meditation.title,
+      artist: "King",
+      elapsedTime: 0,
+      duration: audioManager.player?.duration ?? 100
+    )
+    activity = try? Activity<MusicPlayerAttributes>.request(attributes: attributes, content: .init(state: contentState, staleDate: nil), pushType: nil)
+  }
+  
+  private func updateActivity() {
+    guard let activity, let player = audioManager.player else { return }
+    let state = MusicPlayerAttributes.ContentState(
+      title: meditation.title,
+      artist: "King",
+      elapsedTime: player.currentTime,
+      duration: player.duration
+    )
+    Task {
+      await activity.update(ActivityContent(state: state, staleDate: nil))
+    }
+  }
+  
+  private func stopActivity() {
+    guard let activity, let player = audioManager.player else { return }
+    let state = MusicPlayerAttributes.ContentState(
+      title: meditation.title,
+      artist: "King",
+      elapsedTime: player.currentTime,
+      duration: player.duration
+    )
+    Task {
+      await activity.end(ActivityContent(state: state, staleDate: nil), dismissalPolicy: .immediate)
+    }
+  }
 }

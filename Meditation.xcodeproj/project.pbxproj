@@ -6,11 +6,59 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FDBB8BB62DDEF02700D36ABB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBB8BB52DDEF02700D36ABB /* WidgetKit.framework */; };
+		FDBB8BB82DDEF02700D36ABB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBB8BB72DDEF02700D36ABB /* SwiftUI.framework */; };
+		FDBB8BC32DDEF02800D36ABB /* MusicWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FDBB8BB32DDEF02700D36ABB /* MusicWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDBB8BC12DDEF02800D36ABB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDBC99C42DD442EF004D1611 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDBB8BB22DDEF02700D36ABB;
+			remoteInfo = MusicWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FDBB8BC42DDEF02800D36ABB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FDBB8BC32DDEF02800D36ABB /* MusicWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		FDBB8BB32DDEF02700D36ABB /* MusicWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MusicWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDBB8BB52DDEF02700D36ABB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		FDBB8BB72DDEF02700D36ABB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		FDBC99CC2DD442EF004D1611 /* Meditation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meditation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FDBB8BC82DDEF02800D36ABB /* Exceptions for "MusicWidget" folder in "MusicWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FDBB8BB22DDEF02700D36ABB /* MusicWidgetExtension */;
+		};
+		FDBB8C172DDEF2DD00D36ABB /* Exceptions for "Meditation" folder in "MusicWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ActivityKitDynamicIsland/MusicPlayerAttributes.swift,
+				Assets.xcassets,
+			);
+			target = FDBB8BB22DDEF02700D36ABB /* MusicWidgetExtension */;
+		};
 		FDBC9A162DD63F32004D1611 /* Exceptions for "Meditation" folder in "Meditation" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -21,10 +69,19 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		FDBB8BB92DDEF02700D36ABB /* MusicWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FDBB8BC82DDEF02800D36ABB /* Exceptions for "MusicWidget" folder in "MusicWidgetExtension" target */,
+			);
+			path = MusicWidget;
+			sourceTree = "<group>";
+		};
 		FDBC99CE2DD442EF004D1611 /* Meditation */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				FDBC9A162DD63F32004D1611 /* Exceptions for "Meditation" folder in "Meditation" target */,
+				FDBB8C172DDEF2DD00D36ABB /* Exceptions for "Meditation" folder in "MusicWidgetExtension" target */,
 			);
 			path = Meditation;
 			sourceTree = "<group>";
@@ -32,6 +89,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FDBB8BB02DDEF02700D36ABB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDBB8BB82DDEF02700D36ABB /* SwiftUI.framework in Frameworks */,
+				FDBB8BB62DDEF02700D36ABB /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDBC99C92DD442EF004D1611 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,10 +108,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FDBB8BB42DDEF02700D36ABB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDBB8BB52DDEF02700D36ABB /* WidgetKit.framework */,
+				FDBB8BB72DDEF02700D36ABB /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FDBC99C32DD442EF004D1611 = {
 			isa = PBXGroup;
 			children = (
 				FDBC99CE2DD442EF004D1611 /* Meditation */,
+				FDBB8BB92DDEF02700D36ABB /* MusicWidget */,
+				FDBB8BB42DDEF02700D36ABB /* Frameworks */,
 				FDBC99CD2DD442EF004D1611 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				FDBC99CC2DD442EF004D1611 /* Meditation.app */,
+				FDBB8BB32DDEF02700D36ABB /* MusicWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +139,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FDBB8BB22DDEF02700D36ABB /* MusicWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDBB8BC72DDEF02800D36ABB /* Build configuration list for PBXNativeTarget "MusicWidgetExtension" */;
+			buildPhases = (
+				FDBB8BAF2DDEF02700D36ABB /* Sources */,
+				FDBB8BB02DDEF02700D36ABB /* Frameworks */,
+				FDBB8BB12DDEF02700D36ABB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FDBB8BB92DDEF02700D36ABB /* MusicWidget */,
+			);
+			name = MusicWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = MusicWidgetExtension;
+			productReference = FDBB8BB32DDEF02700D36ABB /* MusicWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FDBC99CB2DD442EF004D1611 /* Meditation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDBC99D72DD442F0004D1611 /* Build configuration list for PBXNativeTarget "Meditation" */;
@@ -68,10 +168,12 @@
 				FDBC99C82DD442EF004D1611 /* Sources */,
 				FDBC99C92DD442EF004D1611 /* Frameworks */,
 				FDBC99CA2DD442EF004D1611 /* Resources */,
+				FDBB8BC42DDEF02800D36ABB /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FDBB8BC22DDEF02800D36ABB /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				FDBC99CE2DD442EF004D1611 /* Meditation */,
@@ -94,6 +196,9 @@
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Blacenova;
 				TargetAttributes = {
+					FDBB8BB22DDEF02700D36ABB = {
+						CreatedOnToolsVersion = 16.3;
+					};
 					FDBC99CB2DD442EF004D1611 = {
 						CreatedOnToolsVersion = 16.3;
 					};
@@ -114,11 +219,19 @@
 			projectRoot = "";
 			targets = (
 				FDBC99CB2DD442EF004D1611 /* Meditation */,
+				FDBB8BB22DDEF02700D36ABB /* MusicWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FDBB8BB12DDEF02700D36ABB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDBC99CA2DD442EF004D1611 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,6 +242,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FDBB8BAF2DDEF02700D36ABB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDBC99C82DD442EF004D1611 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -138,7 +258,69 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FDBB8BC22DDEF02800D36ABB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDBB8BB22DDEF02700D36ABB /* MusicWidgetExtension */;
+			targetProxy = FDBB8BC12DDEF02800D36ABB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		FDBB8BC52DDEF02800D36ABB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YHZVJQ792Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MusicWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Blacenova. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blacenovas.Meditations.MusicWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDBB8BC62DDEF02800D36ABB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YHZVJQ792Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MusicWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Blacenova. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blacenovas.Meditations.MusicWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FDBC99D52DD442F0004D1611 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -267,10 +449,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XP6V4T4UU6;
+				DEVELOPMENT_TEAM = YHZVJQ792Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Meditation/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We use activity tracking to enhance music playback.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -281,7 +466,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.blacenova.Meditation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blacenovas.Meditations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -296,10 +481,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XP6V4T4UU6;
+				DEVELOPMENT_TEAM = YHZVJQ792Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Meditation/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We use activity tracking to enhance music playback.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -310,7 +498,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.blacenova.Meditation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blacenovas.Meditations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -321,6 +509,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FDBB8BC72DDEF02800D36ABB /* Build configuration list for PBXNativeTarget "MusicWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDBB8BC52DDEF02800D36ABB /* Debug */,
+				FDBB8BC62DDEF02800D36ABB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FDBC99C72DD442EF004D1611 /* Build configuration list for PBXProject "Meditation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
